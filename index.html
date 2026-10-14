@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="description" content="Jūratė ant bangos – gidės paslaugos Zarasuose ir Zarasų krašte, žygiai pėsčiomis ir dviračiais, pasiplaukiojimai Zaraso ežere su gidu.">
+  <title>Jūratė ant bangos | Ekskursijos ir pasiplaukiojimai Zarasuose</title>
+  <style>
+    :root{--ink:#173c48;--muted:#53676b;--water:#165873;--forest:#3c624f;--paper:#fbf7ee;--sand:#f1e5d2;--sand-light:#f8efe1;--mist:#edf1e9;--line:#dacfc0;--white:#fff;--width:1160px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,Arial,Helvetica,sans-serif;font-size:17px;line-height:1.65}
+    img{display:block;width:100%;height:auto}
+    a{color:inherit}
+    a:focus-visible{outline:3px solid #ba7430;outline-offset:4px}
+    .wrap{width:min(var(--width),calc(100% - 64px));margin-inline:auto}
+    .proto{padding:7px 18px;text-align:center;background:var(--sand);color:#354744;font-size:13px;letter-spacing:.04em}
+    .header{background:var(--paper);border-bottom:1px solid var(--line)}
+    .header-inner{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .brand{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:27px;line-height:1.1;text-decoration:none}
+    .nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}
+    .nav a{text-decoration:none}.nav a:hover{text-decoration:underline;text-underline-offset:5px}
+    .nav .call{border-bottom:2px solid var(--water);padding-bottom:2px}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.028em;line-height:1.13}
+    h1{font-size:clamp(43px,5.2vw,76px);margin-bottom:20px}
+    h2{font-size:clamp(34px,3.5vw,50px);margin-bottom:20px}
+    h3{font-size:25px;font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.25;margin-bottom:13px}
+    p{margin-bottom:20px}
+    .eyebrow{color:var(--forest);font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+    .hero{display:grid;grid-template-columns:46% 54%;min-height:570px;background:var(--sand-light)}
+    .hero-copy{padding:68px 50px 72px max(32px,calc((100vw - var(--width))/2));display:flex;flex-direction:column;justify-content:center}
+    .hero-copy .intro{max-width:490px;font-size:19px;color:var(--muted);line-height:1.7}
+    .hero-image{min-height:570px;position:relative;overflow:hidden}
+    .hero-image>img{height:100%;object-fit:cover;object-position:49% 57%;position:absolute;inset:0}
+    .hero-portrait{position:absolute;left:-1px;bottom:0;width:clamp(148px,15vw,214px);border:9px solid var(--sand-light);border-left:0;border-bottom:0;box-shadow:12px -10px 35px #173c4833;z-index:1}
+    .hero-portrait img{aspect-ratio:4/5;object-fit:cover;object-position:center 22%;height:auto}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:53px;padding:13px 27px;background:var(--water);border:2px solid var(--water);color:#fff;border-radius:3px;text-decoration:none;font-weight:700;line-height:1.25;white-space:nowrap}
+    .button:hover{background:#0c4057;border-color:#0c4057}
+    .hero .button{align-self:flex-start;margin-top:12px}
+    .minor{font-size:14px;color:var(--muted);margin-top:16px;margin-bottom:0}
+    section{scroll-margin-top:22px}
+    .section{padding:76px 0}
+    .section-intro{max-width:700px;margin-bottom:36px}
+    .section-intro p{color:var(--muted);font-size:18px}
+    .services{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.85fr);gap:clamp(28px,6vw,92px);align-items:start}
+    .service{border-top:1px solid #b8b1a3;padding-top:22px}
+    .service-primary{padding:28px 32px 29px;background:var(--sand-light);border-top:4px solid var(--forest)}
+    .service-secondary{margin-top:72px}
+    .service p{color:var(--muted)}
+    .service ul{margin:0;padding-left:21px;color:var(--ink)}
+    .service li{margin:7px 0}
+    .detail{font-weight:650;color:var(--ink)!important}
+    .lake-section{background:var(--mist)}
+    .lake-layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center}
+    .lake-photo img{max-height:500px;height:470px;object-fit:cover;object-position:center 54%}
+    .lake-copy p{color:var(--muted)}
+    .price{font-family:Georgia,'Times New Roman',serif;font-size:38px;line-height:1.2;color:var(--ink);margin:22px 0 5px}
+    .price-note{font-size:14px}
+    .about-layout{display:block;max-width:810px;margin-inline:auto;text-align:center}
+    
+    .about-text{max-width:760px;margin-inline:auto}
+    .about-text p{font-size:19px;color:var(--muted)}
+    .contact-section{background:#194653;color:#fff;padding:74px 0}
+    .contact-layout{display:flex;justify-content:space-between;align-items:center;gap:45px}
+    .contact-section h2{max-width:670px}
+    .contact-section p{color:#e3eeed;max-width:660px}
+    .contact-section .button{background:#fff;color:#194653;border-color:#fff}
+    .contact-section .button:hover{background:#edf5f2}
+    .contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+    .contact-links .email{color:#fff;text-underline-offset:4px;overflow-wrap:anywhere}
+    .footer{padding:28px 0;font-size:14px;color:var(--muted)}
+    .footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    @media(max-width:960px){
+      .hero{grid-template-columns:1fr 1fr;min-height:510px}.hero-copy{padding:54px 32px}.hero-image{min-height:510px}
+      .lake-layout{gap:38px}.section{padding:64px 0}.services{gap:30px}
+    }
+    @media(max-width:680px){
+      body{font-size:16px}.wrap{width:calc(100% - 36px)}
+      .header-inner{min-height:70px;gap:12px}.brand{font-size:23px}.nav{gap:15px;font-size:13px}.nav a:first-child{display:none}
+      .hero{display:flex;flex-direction:column}.hero-copy{padding:42px 18px 35px}.hero-image{min-height:335px;height:335px}.hero-image>img{object-position:center 60%}.hero-portrait{width:132px;border-width:6px;border-left:0;border-bottom:0}
+      h1{font-size:clamp(42px,11vw,62px)}.hero-copy .intro{font-size:17px}
+      .section{padding:55px 0}.section-intro{margin-bottom:26px}.services,.lake-layout{grid-template-columns:1fr;gap:25px}.service-primary{padding:24px 22px}.service-secondary{margin-top:0}
+      .lake-photo img{height:340px;max-height:none}.lake-copy{order:-1}
+      .about-text p{font-size:17px}.contact-section{padding:58px 0}.contact-layout{flex-direction:column;align-items:flex-start;gap:16px}
+      .footer .wrap{display:block}.footer span{display:block;margin-bottom:5px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <div class="proto">Mokomasis prototipas</div>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#pradzia" aria-label="Jūratė ant bangos – į pradžią">Jūratė ant bangos</a>
+      <nav class="nav" aria-label="Pagrindinė navigacija">
+        <a href="#paslaugos">Paslaugos</a>
+        <a href="#apie">Apie mane</a>
+        <a href="tel:+37061633661" class="call">Skambinti</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="pradzia" class="hero" aria-labelledby="pagrindine-antraste">
+      <div class="hero-copy">
+        <p class="eyebrow">Gidės paslaugos Zarasuose</p>
+        <h1 id="pagrindine-antraste">Pažinkite Zarasų kraštą su gide Jūrate</h1>
+        <p class="intro">Ekskursijos, žygiai pėsčiomis ir dviračiais bei pasiplaukiojimai Zaraso ežere. Atraskite gamtą, vietos istorijas ir naujus įspūdžius.</p>
+        <a class="button" href="tel:+37061633661">Skambinti</a>
+        <p class="minor">Pasitarkime dėl Jūsų viešnagės Zarasų krašte.</p>
+      </div>
+      <div class="hero-image"><img src="assets/zarasu-apzvalgos-ratas.jpg" alt="Zarasų apžvalgos ratas virš ežero" width="1800" height="1350" fetchpriority="high"><div class="hero-portrait"><img src="assets/jurate-portretas.jpg" alt="Gidė Jūratė Mardosienė" width="825" height="1100"></div></div>
+    </section>
+
+    <section class="section" id="paslaugos" aria-labelledby="paslaugos-antraste">
+      <div class="wrap">
+        <div class="section-intro">
+          <p class="eyebrow">Ką galime nuveikti?</p>
+          <h2 id="paslaugos-antraste">Zarasų kraštas – Jūsų tempu</h2>
+          <p>Ieškantiems lėtesnio poilsio, gamtos grožio ir naujų žinių apie Zarasus.</p>
+        </div>
+        <div class="services">
+          <article class="service service-primary">
+            <h3>Ekskursijos ir žygiai</h3>
+            <p>Gido paslaugos Zarasų mieste ir rajone, žygiai pėsčiomis ir dviračiais. Susipažinkite su Zarasų kraštu, jo gamta, istorija ir lankytinomis vietomis.</p>
+            <p class="detail">Kaina ir maršrutas derinami individualiai.</p>
+          </article>
+          <article class="service service-secondary">
+            <h3>Pagalba planuojant viešnagę</h3>
+            <p>Planuojate atvykti į Zarasų kraštą? Kreipkitės dėl pagalbos rengiant viešnagės planą.</p>
+            <p class="detail">Dėl galimybių ir sąlygų – skambinkite.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section lake-section" id="plaukimas" aria-labelledby="plaukimas-antraste">
+      <div class="wrap lake-layout">
+        <div class="lake-photo"><img src="assets/zaraso-ezeras-saulelydis.jpg" alt="Zaraso ežeras ir fontanas saulėlydžio metu" width="1050" height="1400" loading="lazy"></div>
+        <div class="lake-copy">
+          <p class="eyebrow">Zaraso ežeras</p>
+          <h2 id="plaukimas-antraste">Pasiplaukiojimai su gidu</h2>
+          <p>Kviečiame pažinti Zarasus iš vandens! Organizuojame 2 valandų pasiplaukiojimus Zaraso ežere mažesniu arba didesniu laivu (katamaranu), kartu su gido paslaugomis.</p>
+          <p class="detail">Grupėms nuo 8 iki 25 žmonių.</p>
+          <p class="price">15–20 € / žmogui</p>
+          <p class="price-note">2 valandų pasiplaukiojimas, įskaitant gido paslaugas.</p>
+          <a class="button" href="tel:+37061633661">Skambinti dėl pasiplaukiojimo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apie" aria-labelledby="apie-antraste">
+      <div class="wrap about-layout">
+        <div class="about-text">
+          <p class="eyebrow">Susipažinkime</p>
+          <h2 id="apie-antraste">Esu Jūratė Mardosienė</h2>
+          <p>Teikiu gido paslaugas Zarasuose ir Zarasų rajone. Man svarbus bendravimas, žinios ir galimybė padėti Jums pažinti šį kraštą.</p>
+          <p>Galime pasikalbėti apie tai, kokio poilsio ar pažintinės patirties ieškote.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontaktai" aria-labelledby="kontaktai-antraste">
+      <div class="wrap contact-layout">
+        <div>
+          <h2 id="kontaktai-antraste">Planuojate viešnagę Zarasuose?</h2>
+          <p>Paskambinkite ir aptarkime norimą ekskursiją, žygį ar pasiplaukiojimą. Galėsite pasiteirauti apie atstumus, kainą ir kitas sąlygas.</p>
+        </div>
+        <div class="contact-links">
+          <a class="button" href="tel:+37061633661">Skambinti +370 616 33661</a>
+          <a class="email" href="mailto:klimaityte@gmail.com">klimaityte@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><span>© Jūratė ant bangos</span><span>Mokomasis prototipas · Neskirtas indeksuoti paieškos sistemose</span></div></footer>
+</body>
+</html>
