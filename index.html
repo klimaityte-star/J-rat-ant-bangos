@@ -87,6 +87,18 @@
       .footer .wrap{display:block}.footer span{display:block;margin-bottom:5px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    .reviews-section{background:var(--sand-light)}
+    .reviews-layout{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+    .review-box,.review-form{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:28px;min-width:0}
+    .review-form label{display:block;font-weight:600;margin-bottom:7px}
+    .review-form input,.review-form select,.review-form textarea{display:block;width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid #8b9998;border-radius:3px;padding:10px 12px;margin-bottom:20px}
+    .review-form textarea{resize:vertical;min-height:145px}
+    .review-form :focus-visible{outline:3px solid #ba7430;outline-offset:3px}
+    .review-form .button{white-space:normal;cursor:pointer;font:inherit;font-weight:700;width:100%}
+    .review-form .minor{margin:0 0 18px}
+    #review-status{margin-top:16px;font-size:15px}
+    @media(max-width:680px){.reviews-layout{grid-template-columns:1fr;gap:22px}.review-box,.review-form{padding:22px}.nav{flex-wrap:wrap;justify-content:flex-end;gap:8px 14px}.header-inner{padding-block:12px}.nav a{font-size:12px}}
   </style>
 </head>
 <body>
@@ -97,6 +109,7 @@
       <nav class="nav" aria-label="Pagrindinė navigacija">
         <a href="#paslaugos">Paslaugos</a>
         <a href="#apie">Apie mane</a>
+        <a href="#atsiliepimai">Atsiliepimai</a>
         <a href="tel:+37061633661" class="call">Skambinti</a>
       </nav>
     </div>
@@ -161,6 +174,43 @@
       </div>
     </section>
 
+
+    <section class="section reviews-section" id="atsiliepimai" aria-labelledby="atsiliepimai-antraste">
+      <div class="wrap">
+        <div class="section-intro">
+          <p class="eyebrow">Jūsų įspūdžiai</p>
+          <h2 id="atsiliepimai-antraste">Atsiliepimai</h2>
+          <p>Keliavote su manimi po Zarasų kraštą? Pasidalykite, kas įsiminė. Jūsų žodžiai padeda kitiems išsirinkti savo patirtį.</p>
+        </div>
+        <div class="reviews-layout">
+          <div class="review-box">
+            <h3>Keliautojų įspūdžiai</h3>
+            <p>Čia bus skelbiami keliautojų atsiliepimai, gavus jų leidimą.</p>
+            <p class="minor">Norite pasidalyti savo įspūdžiais? Užpildykite šalia esančią formą arba parašykite <a href="mailto:klimaityte@gmail.com?subject=Atsiliepimas%20apie%20ekskursij%C4%85">klimaityte@gmail.com</a>.</p>
+          </div>
+          <form class="review-form" id="review-form" aria-labelledby="review-form-heading">
+            <h3 id="review-form-heading">Parašykite atsiliepimą</h3>
+            <label for="review-name">Jūsų vardas</label>
+            <input id="review-name" name="name" autocomplete="given-name" maxlength="80" required>
+            <label for="review-experience">Ką patyrėte?</label>
+            <select id="review-experience" name="experience">
+              <option>Ekskursiją</option>
+              <option>Pasiplaukiojimą su gidu</option>
+              <option>Žygį pėsčiomis</option>
+              <option>Žygį dviračiais</option>
+              <option>Kitą patirtį</option>
+            </select>
+            <label for="review-text">Jūsų atsiliepimas</label>
+            <textarea id="review-text" name="review" maxlength="3000" required placeholder="Kas labiausiai įsiminė?"></textarea>
+            <p class="minor" id="review-help">Mygtukas atvers Jūsų el. pašto programą su paruoštu laišku Jūratei. Laišką reikės išsiųsti patiems. Atsiliepimas svetainėje automatiškai nepasirodys; dėl viešinimo susitarsime atskirai.</p>
+            <button class="button" type="submit" aria-describedby="review-help">Paruošti atsiliepimą el. paštu</button>
+            <p id="review-status" role="status" hidden></p>
+            <noscript><p>Norėdami pateikti atsiliepimą, rašykite <a href="mailto:klimaityte@gmail.com">klimaityte@gmail.com</a>.</p></noscript>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section class="contact-section" id="kontaktai" aria-labelledby="kontaktai-antraste">
       <div class="wrap contact-layout">
         <div>
@@ -175,5 +225,25 @@
     </section>
   </main>
   <footer class="footer"><div class="wrap"><span>© Jūratė ant bangos</span><span>Mokomasis prototipas · Neskirtas indeksuoti paieškos sistemose</span></div></footer>
+
+<script>
+  document.getElementById('review-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var name = document.getElementById('review-name').value.trim();
+    var review = document.getElementById('review-text').value.trim();
+    var status = document.getElementById('review-status');
+    if (!name || !review) {
+      status.hidden = false;
+      status.textContent = 'Įrašykite savo vardą ir atsiliepimą.';
+      document.getElementById(!name ? 'review-name' : 'review-text').focus();
+      return;
+    }
+    var experience = document.getElementById('review-experience').value;
+    var body = 'Vardas: ' + name + '\nPatirtis: ' + experience + '\n\n' + review;
+    window.location.href = 'mailto:klimaityte@gmail.com?subject=' + encodeURIComponent('Atsiliepimas – Jūratė ant bangos') + '&body=' + encodeURIComponent(body);
+    status.hidden = false;
+    status.textContent = 'Jei pašto programa atsidarė, išsiųskite paruoštą laišką joje. Jei neatsidarė, nukopijuokite atsiliepimą ir siųskite adresu klimaityte@gmail.com. Jūsų tekstas liko formoje.';
+  });
+</script>
 </body>
 </html>
