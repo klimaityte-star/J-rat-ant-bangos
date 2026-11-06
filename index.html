@@ -147,6 +147,18 @@
       .hero-image>img{object-position:center 57%}
       .hero-portrait{width:94px}
     }
+      #paslaugos{padding-top:28px;padding-bottom:40px}
+    #paslaugos .services{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch}
+    #paslaugos .service{margin:0;padding:24px;background:var(--sand-light);border:0;display:flex;flex-direction:column}
+    #paslaugos .service h3{margin-bottom:13px}
+    #paslaugos .service .detail{margin-top:auto;margin-bottom:0;padding-top:8px}
+    @media(max-width:680px){
+      #paslaugos{padding-top:22px;padding-bottom:28px}
+      #paslaugos .services{gap:12px}
+      #paslaugos .service{padding:16px 12px}
+      #paslaugos .service h3{font-size:21px}
+      #paslaugos .service p{font-size:14px;line-height:1.5}
+    }
   </style>
 </head>
 <body>
@@ -188,11 +200,6 @@
 
     <section class="section" id="paslaugos" aria-label="Paslaugos">
       <div class="wrap">
-        <div class="section-intro">
-          
-          
-          
-        </div>
         <div class="services">
           <article class="service service-primary">
             <h3>Ekskursijos ir žygiai</h3>
