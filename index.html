@@ -115,6 +115,10 @@
     .hero .contact-buttons{align-self:flex-start}
     @media(max-width:680px){.contact-buttons{flex-direction:column;align-items:flex-start}.contact-buttons .button{max-width:100%;padding-inline:18px}}
       .section-intro .leisure-intro{font-size:16px}
+      .header .nav{margin-left:auto}
+    .header .nav .header-contacts{flex-direction:row;align-items:center;flex-wrap:wrap;gap:8px 16px;font-weight:400}
+    .header .nav .header-contacts a{display:inline;white-space:nowrap}
+    @media(max-width:680px){.header .nav{margin-left:0;justify-content:flex-start}.header .nav .header-contacts{font-size:12px}}
   </style>
 </head>
 <body>
@@ -123,15 +127,15 @@
     <div class="wrap header-inner">
       <div class="header-identity">
         <a class="brand" href="#pradzia" aria-label="Jūratė ant bangos – į pradžią">Jūratė ant bangos</a>
-        <div class="header-contacts" aria-label="Kontaktai">
-          <a href="mailto:klimaityte@gmail.com">klimaityte@gmail.com</a>
-          <a href="tel:+37061633661">+370 616 33661</a>
-        </div>
       </div>
       <nav class="nav" aria-label="Pagrindinė navigacija">
         <a href="#paslaugos">Paslaugos</a>
         <a href="#apie">Apie mane</a>
         <a href="#atsiliepimai">Atsiliepimai</a>
+        <div class="header-contacts" aria-label="Kontaktai">
+          <a href="mailto:klimaityte@gmail.com">klimaityte@gmail.com</a>
+          <a href="tel:+37061633661">+370 616 33661</a>
+        </div>
       </nav>
       <div class="language-switch" role="group" aria-label="Kalba / Language">
         <button type="button" data-language="lt" lang="lt" aria-label="Lietuvių" aria-pressed="true">LT</button>
